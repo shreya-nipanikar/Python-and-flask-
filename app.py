@@ -13,12 +13,12 @@ def route_main():
 
 # Returns JSON which containes all customer details
 @app.route('/getairlines/')
-def restaurants_all():
+def airlines_all():
     return render_template("index.html",items=data)
 
 # Returns airlines JSON which matches the id
 @app.route('/getairlines/<string:id>/')
-def restaurants_by_id(id=''):
+def airliness_by_id(id=''):
     myList=[]
     for element in data:
         if element["id"] == id:
@@ -27,7 +27,7 @@ def restaurants_by_id(id=''):
 
 # Returns the airlines JSON with particualr gate
 @app.route('/getairlines/gate/<string:gate>/')
-def restaurants_by_type(gate=''):
+def airlines_by_gatetype(gate=''):
     myList=[]
     for element in data:
         if element["gate"].lower() == gate.lower():
